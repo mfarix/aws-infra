@@ -20,13 +20,13 @@ variable "tf_env" {
 variable "ec2_instance_type" {
   description = "Type of EC2 instance to start."
   type        = string
-  default     = "t3.micro"
+  default     = "t2.micro"
 }
 
 variable "ec2_instance_name" {
   description = "Name of EC2 instance."
   type        = string
-  default     = "test"
+  default     = "web-server"
 }
 
 variable "ec2_vpc_security_group_ids" {

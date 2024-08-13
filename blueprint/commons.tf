@@ -9,3 +9,11 @@ locals {
 }
 
 data "aws_caller_identity" "current" {}
+
+data "aws_vpc" "default" {
+  default = true
+}
+
+resource "aws_sns_topic" "alerts" {
+  name = "cloudwatch-alerts"
+}

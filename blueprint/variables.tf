@@ -20,17 +20,23 @@ variable "tf_env" {
 variable "ec2_instance_type" {
   description = "Type of EC2 instance to start."
   type        = string
-  default     = "t2.micro"
+  default     = "t3.micro"
 }
 
 variable "ec2_instance_name" {
   description = "Name of EC2 instance."
   type        = string
-  default     = "web-server"
+  default     = "Web-Server"
 }
 
-variable "ec2_vpc_security_group_ids" {
-  description = "A list of security group IDs to associate with."
-  type        = list(string)
-  default     = []
+variable "ec2_ami_ssm_parameter" {
+  description = "SSM parameter name for the AMI ID. For Amazon Linux AMI SSM parameters see https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-public-parameters-ami.html"
+  type        = string
+  default     = "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64"
+}
+
+variable "admin_ip" {
+  description = "Administrator's Public IP used to SSH"
+  type        = string
+  default     = "172.225.180.188/32"
 }
